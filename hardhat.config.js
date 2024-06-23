@@ -43,8 +43,11 @@ module.exports = {
     goerli: {
       url: `${process.env.GOERLI_RPC_URL}`,
     },
-    holesky: {
-      url: `${process.env.HOLESKY_RPC_URL}`,
+    goerli: {
+      url: `${process.env.GOERLI_RPC_URL}`,
+    },
+    pusechain_testnet_v4: {
+      url: `${process.env.PULSECHAIN_TESTNET_V4_RPC_URL}`,
     }
   },
   etherscan: {
@@ -61,6 +64,12 @@ module.exports = {
         urls: {
           apiURL: "https://api-holesky.etherscan.io/api",
           browserURL: "https://holesky.etherscan.io"
+        },
+        network: "pusechain_testnet_v4",
+        chainId: 943,
+        urls: {
+          apiURL: "https://api.scan.v4.testnet.pulsechain.com",
+          browserURL: "https://rpc.v4.testnet.pulsechain.com"
         }
       }
     ]

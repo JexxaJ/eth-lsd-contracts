@@ -37,7 +37,7 @@ contract NetworkBalances is Initializable, UUPSUpgradeable, INetworkBalances {
         networkProposalAddress = _networkProposalAddress;
         submitBalancesEnabled = true;
         rateChangeLimit = 11e14; //0.0011
-        updateBalancesEpochs = 225;
+        updateBalancesEpochs = 271; // Eth is 225, pulsechain 271 for ~24 hour period 10sec block period
     }
 
     function reinit() public virtual override reinitializer(1) {
@@ -90,7 +90,7 @@ contract NetworkBalances is Initializable, UUPSUpgradeable, INetworkBalances {
     }
 
     function setUpdateBalancesEpochs(uint256 _value) external onlyAdmin {
-        if (_value < 75) { // equivalent to 8 hours
+        if (_value < 90) { // equivalent to 8 hours, 75 for eth 90 for PLS
             revert TooLow(75);
         }
         updateBalancesEpochs = _value;
