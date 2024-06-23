@@ -6,6 +6,10 @@ coverage
 coverage.json
 typechain
 typechain-types
+.depolys
+.deps
+.states
+
 
 # Hardhat files
 cache
